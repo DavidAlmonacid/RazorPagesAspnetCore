@@ -398,4 +398,4 @@ FodyWeavers.xsd
 *.sln.iml
 
 # Custom files
-ContosoPizza/wwwroot/css/styles.css
+**/wwwroot/css/styles.css
