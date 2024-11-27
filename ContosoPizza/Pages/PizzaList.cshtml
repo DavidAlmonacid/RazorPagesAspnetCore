@@ -8,27 +8,27 @@
 
 <!-- New Pizza form will go here -->
 
-<table class="table mt-5">
+<table class="min-w-full mt-5 border-collapse">
     <thead>
         <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Size</th>
-            <th scope="col">Gluten Free</th>
-            <th scope="col">Delete</th>
+            <th scope="col" class="px-4 py-2 border-b">Name</th>
+            <th scope="col" class="px-4 py-2 border-b">Price</th>
+            <th scope="col" class="px-4 py-2 border-b">Size</th>
+            <th scope="col" class="px-4 py-2 border-b">Gluten Free</th>
+            <th scope="col" class="px-4 py-2 border-b">Delete</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var pizza in Model.PizzaList)
         {
             <tr>
-                <td>@pizza.Name</td>
-                <td>@($"{pizza.Price:C}")</td>
-                <td>@pizza.Size</td>
-                <td>@(pizza.IsGlutenFree ? "✔️" : string.Empty)</td>
-                <td>
+                <td class="px-4 py-2 border-b">@pizza.Name</td>
+                <td class="px-4 py-2 border-b">@($"{pizza.Price:C}")</td>
+                <td class="px-4 py-2 border-b">@pizza.Size</td>
+                <td class="px-4 py-2 border-b">@(pizza.IsGlutenFree ? "✔️" : string.Empty)</td>
+                <td class="px-4 py-2 border-b">
                     <form method="post" asp-page-handler="Delete" asp-route-id="@pizza.Id">
-                        <button class="btn btn-danger">Delete</button>
+                        <button class="bg-red-500 text-white px-4 py-2 rounded">Delete</button>
                     </form>
                 </td>
             </tr>
