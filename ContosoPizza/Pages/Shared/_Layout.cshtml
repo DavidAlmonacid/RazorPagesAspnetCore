@@ -13,7 +13,7 @@
     <header>
         <nav class="border-b shadow">
             <div class="container mx-auto px-4 lg:px-6 py-2.5">
-                <a class="text-xl font-bold" asp-area="" asp-page="/Index">ContosoPizza</a>
+                <a class="relative z-10 text-xl font-bold" asp-area="" asp-page="/Index">ContosoPizza</a>
 
                 <div class="flex items-center justify-center absolute top-0 left-0 right-0 my-1">
                     <ul class="flex font-medium">
@@ -35,7 +35,7 @@
         </nav>
     </header>
 
-    <div class="container mx-auto px-4 flex-grow">
+    <div class="container mx-auto px-4 py-6 flex-grow">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
