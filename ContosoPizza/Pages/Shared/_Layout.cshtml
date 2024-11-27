@@ -9,29 +9,24 @@
     <link rel="stylesheet" href="~/ContosoPizza.styles.css" asp-append-version="true" />
 </head>
 
-<body>
+<body class="min-h-screen flex flex-col">
     <header>
-        <nav class="bg-white border-b shadow mb-3">
-            <div class="container mx-auto px-4">
+        <nav class="border-b shadow">
+            <div class="container mx-auto px-4 lg:px-6 py-2.5">
                 <a class="text-xl font-bold" asp-area="" asp-page="/Index">ContosoPizza</a>
-                <button
-                    class="block lg:hidden px-3 py-2 border rounded text-gray-700 border-gray-400 hover:text-black hover:border-black"
-                    type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse lg:flex lg:items-center lg:justify-between">
-                    <ul class="flex flex-col lg:flex-row lg:space-x-4 w-full lg:w-auto">
-                        <li class="nav-item">
-                            <a class="block py-2 px-4 text-gray-700 hover:text-black" asp-area=""
+
+                <div class="flex items-center justify-center absolute top-0 left-0 right-0 my-1">
+                    <ul class="flex font-medium">
+                        <li>
+                            <a class="block py-2 px-4 text-sky-700 hover:text-black" asp-area=""
                                 asp-page="/Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="block py-2 px-4 text-gray-700 hover:text-black" asp-area=""
+                        <li>
+                            <a class="block py-2 px-4 text-sky-700 hover:text-black" asp-area=""
                                 asp-page="/Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="block py-2 px-4 text-gray-700 hover:text-black" asp-area=""
+                        <li>
+                            <a class="block py-2 px-4 text-sky-700 hover:text-black" asp-area=""
                                 asp-page="/PizzaList">Pizza List 🍕</a>
                         </li>
                     </ul>
@@ -39,7 +34,8 @@
             </div>
         </nav>
     </header>
-    <div class="container mx-auto px-4">
+
+    <div class="container mx-auto px-4 flex-grow">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
