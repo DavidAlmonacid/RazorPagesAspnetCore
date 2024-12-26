@@ -1,11 +1,36 @@
 {
 	"name": "C# (.NET)",
-	"image": "mcr.microsoft.com/devcontainers/dotnet:0-7.0",
-
+	"image": "mcr.microsoft.com/devcontainers/dotnet:dev-8.0-bookworm-slim",
 	"features": {
-		"ghcr.io/warrenbuckley/codespace-features/sqlite:latest": {}
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "lts"
+		}
 	},
-
+	"forwardPorts": [5173, 5257],
+	"postCreateCommand": "dotnet tool install -g dotnet-ef && dotnet tool install csharpier --create-manifest-if-needed && dotnet dev-certs https && npm install",
 	"customizations": {
+		"vscode": {
+			"extensions": [
+				"github.copilot",
+				"ms-dotnettools.csdevkit",
+				"csharpier.csharpier-vscode",
+				"postman.postman-for-vscode",
+				"qwtel.sqlite-viewer"
+			],
+			"settings": {
+				"[csharp]": {
+					"editor.tabSize": 4,
+					"editor.wordWrapColumn": 100,
+					"editor.rulers": [100],
+					"editor.defaultFormatter": "csharpier.csharpier-vscode"
+				},
+				"[razor]": {
+					"editor.tabSize": 4,
+					"editor.wordWrapColumn": 100,
+					"editor.rulers": [100],
+					"editor.defaultFormatter": "csharpier.csharpier-vscode"
+				}
+			}
+		}
 	}
 }
