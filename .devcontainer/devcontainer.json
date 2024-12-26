@@ -6,7 +6,12 @@
 			"version": "lts"
 		}
 	},
-	"forwardPorts": [5173, 5257],
+	"forwardPorts": [5257, 7040],
+	"portsAttributes": {
+			"7040": {
+				"protocol": "https"
+			}
+	},
 	"postCreateCommand": "dotnet tool install -g dotnet-ef && dotnet tool install csharpier --create-manifest-if-needed && dotnet dev-certs https && npm install",
 	"customizations": {
 		"vscode": {
@@ -14,6 +19,7 @@
 				"github.copilot",
 				"ms-dotnettools.csdevkit",
 				"csharpier.csharpier-vscode",
+				"bradlc.vscode-tailwindcss",
 				"postman.postman-for-vscode",
 				"qwtel.sqlite-viewer"
 			],
@@ -24,7 +30,7 @@
 					"editor.rulers": [100],
 					"editor.defaultFormatter": "csharpier.csharpier-vscode"
 				},
-				"[razor]": {
+				"[aspnetcorerazor]": {
 					"editor.tabSize": 4,
 					"editor.wordWrapColumn": 100,
 					"editor.rulers": [100],
