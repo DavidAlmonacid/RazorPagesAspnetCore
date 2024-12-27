@@ -21,7 +21,8 @@
 				"csharpier.csharpier-vscode",
 				"bradlc.vscode-tailwindcss",
 				"postman.postman-for-vscode",
-				"qwtel.sqlite-viewer"
+				"qwtel.sqlite-viewer",
+				"-dbaeumer.vscode-eslint"
 			],
 			"settings": {
 				"[csharp]": {
