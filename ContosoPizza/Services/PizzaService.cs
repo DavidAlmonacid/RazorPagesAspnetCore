@@ -18,7 +18,8 @@ namespace ContosoPizza.Services
             {
                 return _context.Pizzas.ToList();
             }
-            return new List<Pizza>();
+
+            return [];
         }
 
         public void AddPizza(Pizza pizza)
