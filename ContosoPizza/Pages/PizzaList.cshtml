@@ -6,51 +6,54 @@
 
 <h1 class="text-3xl font-bold text-center mt-5">Pizza List 🍕</h1>
 
-<div class="container max-w-md my-8 mx-auto">
+<div class="container max-w-md my-8 mx-auto mb-10">
     <h3 class="text-lg font-medium mb-4">Add a new pizza</h3>
 
     <form method="post" class="grid grid-cols-2 gap-4">
+        <div asp-validation-summary="ModelOnly"></div>
 
-        <div asp-validation-summary="ModelOnly" class=""></div>
         <div class="flex flex-col col-span-2">
             <label asp-for="NewPizza.Name" class="text-sm font-medium mb-1"></label>
             <input asp-for="NewPizza.Name"
                 class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 p-1.5" />
-            <span asp-validation-for="NewPizza.Name" class=""></span>
+            <span asp-validation-for="NewPizza.Name" class="text-red-500"></span>
         </div>
 
         <div class="flex flex-col">
             <label asp-for="NewPizza.Size" class="text-sm font-medium mb-1"></label>
             <select asp-for="NewPizza.Size"
-                class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 p-1.5">
+                class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 p-1.5 bg-white">
                 <option value="" disabled selected>-- Select Size --</option>
                 <option value="Small">Small</option>
                 <option value="Medium">Medium</option>
                 <option value="Large">Large</option>
             </select>
-            <span asp-validation-for="NewPizza.Size" class=""></span>
+            <span asp-validation-for="NewPizza.Size" class="text-red-500"></span>
         </div>
 
         <div class="flex flex-col">
-            <label asp-for="NewPizza.Price" class=""></label>
-            <input asp-for="NewPizza.Price" class="" />
-            <span asp-validation-for="NewPizza.Price" class=""></span>
+            <label asp-for="NewPizza.Price"></label>
+            <input asp-for="NewPizza.Price"
+                class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 p-1.5" />
+            <span asp-validation-for="NewPizza.Price" class="text-red-500"></span>
         </div>
 
         <div class="col-span-2">
-            <label class="">
-                <input class="" asp-for="NewPizza.IsGlutenFree" /> @Html.DisplayNameFor(model =>
+            <label>
+                <input asp-for="NewPizza.IsGlutenFree" /> @Html.DisplayNameFor(model =>
                 model.NewPizza.IsGlutenFree)
             </label>
         </div>
 
-        <div class="">
-            <input type="submit" value="Create" class="" />
+        <div class="mt-1.5">
+            <button type="submit" class="bg-blue-500 text-white px-6 py-1.5 rounded">
+                Create
+            </button>
         </div>
     </form>
 </div>
 
-<table class="min-w-full mt-5 border-collapse">
+<table class="min-w-full border-collapse">
     <thead>
         <tr>
             <th scope="col" class="px-4 py-2 border-b">Name</th>
@@ -66,10 +69,10 @@
         {
             <tr>
                 <td class="px-4 py-2 border-b">@pizza.Name</td>
-                <td class="px-4 py-2 border-b">@($"{pizza.Price:C}")</td>
+                <td class="px-4 py-2 border-b text-center">@($"{pizza.Price:C}")</td>
                 <td class="px-4 py-2 border-b">@pizza.Size</td>
-                <td class="px-4 py-2 border-b">@(pizza.IsGlutenFree ? "✔️" : string.Empty)</td>
-                <td class="px-4 py-2 border-b">
+                <td class="px-4 py-2 border-b text-center">@(pizza.IsGlutenFree ? "✔️" : string.Empty)</td>
+                <td class="px-4 py-2 border-b text-center">
                     <form method="post" asp-page-handler="Delete" asp-route-id="@pizza.Id">
                         <button class="bg-red-500 text-white px-4 py-2 rounded">Delete</button>
                     </form>
