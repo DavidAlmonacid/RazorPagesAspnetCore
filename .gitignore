@@ -399,3 +399,6 @@ FodyWeavers.xsd
 
 # Custom files
 **/wwwroot/css/styles.css
+
+# SQLite database files
+*.db*
